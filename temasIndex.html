@@ -2,29 +2,29 @@
 <html>
 <head>
     <title>Temas</title>
-    <script src="script.js"></script>
+    <script src="scriptTemas.js"></script>
     <link rel="stylesheet" type="text/css" href="estilos.css">
     <meta charset="utf-8"/>
 </head>
 <body onload="cambiaDos()">
 
 <h1>INDEX TEMAS</h1>
-<div id="principalCurses"><h2>Temas de PisoFranko</h2></div>
+<div id="principalTemas"><h2>Temas de PisoFranko</h2></div>
 
 
 <div id="formTodo">
 
     <label for="id">Id:</label>
-    <input type="text" id="id" name="id_tema"/>
+    <input type="number" id="id" name="id_tema"/>
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" name="nombre_tema"/>
     <label for="instrumental">Instrumental:</label>
     <input type="text" id="instrumental" name="instrumental_tema"/>
     <label for="instrumentalId">Id_Instrumental:</label>
-    <input type="text" id="instrumentalId" name="instrumentalId_tema""/>
+    <input type="number" id="instrumentalId" name="instrumentalId_tema""/>
 
 
-    <button onclick="insertarColega()"> AÑADIR </button>
+    <button onclick="insertarTema()"> AÑADIR </button>
 
     <button onclick="updateColega()"> UPDATE </button>
 </div>
