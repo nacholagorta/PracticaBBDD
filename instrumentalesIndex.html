@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Instrumentales</title>
+<script src="myScript.js"></script>
+<link rel="stylesheet" type="text/css" href="estilos.css">
+<meta charset="utf-8"/>
+</head>
+<body onload="cambiaDos()">
+
+<h1>CLIENTE INSTRUMENTALES</h1>
+<div id="principal"><h2>Instrumentales de Pisofranko</h2></div>
+
+
+<div id="formTodo">
+
+	<label for="id">Id:</label>
+	<input type="text" id="id" name="id_instrumental" value="lorenzo"/>
+	<label for="nombre">Nombre:</label>
+	<input type="text" id="nombre" name="nombre_instrumental" value="7"/>
+	<label for="productor">Productor:</label>
+	<input type="text" id="productor" name="productor_instrumental" value="1"/>
+	<label for="genero">Genero:</label>
+	<input type="text" id="genero" name="genero_instrumental" value="1"/>
+
+	<button onclick="insertarColega()"> AÑADIR </button>
+	<button onclick="updateColega()"> Update </button>
+
+</div>
+
+
+</body>
+</html>
