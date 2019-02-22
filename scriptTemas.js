@@ -29,7 +29,7 @@ function borraHijos(elemento){
 
 function cambiaDos(){
 
-    var capa = document.getElementById("principalCurses");
+    var capa = document.getElementById("principalTemas");
 
     borraHijos(capa);
 
@@ -37,6 +37,7 @@ function cambiaDos(){
 
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
+          console.log(this.responseText)
             pintaTabla(this.responseText);
         }else{
             console.log(this.readyState + " " + this.status);
@@ -44,7 +45,7 @@ function cambiaDos(){
     };
 
     //xhttp.open("GET", "http://localhost/DavidAngulo/crudJson/readEntity.php", true);
-    xhttp.open("GET", "http://localhost/Nacho/DataAccessJSON/readCurse.php", true);
+    xhttp.open("GET", "http://localhost/Nacho/PisoFranko/readTema.php", true);
     xhttp.send();
 
 
@@ -55,44 +56,44 @@ function pintaTabla(respuesta){
     var respuestaJSON = JSON.parse(respuesta);
     console.log(respuesta)
 
-    var capa = document.getElementById("principalCurses");
+    var capa = document.getElementById("principalTemas");
 
     if(respuestaJSON["estado"] == "ok"){
         console.log("VAMOS BIEN");
 
-        var arrJugadores =  respuestaJSON["cursos"];
+        var arrTemas =  respuestaJSON["temas"];
 
-        for(var i = 0; i < arrJugadores.length; i++){
-            //console.log(arrJugadores[i])
+        for(var i = 0; i < arrTemas.length; i++){
+            //console.log(arrTemas[i])
             var fila = document.createElement("div");
-            fila.setAttribute("id","persona_"+ arrJugadores[i].str_mid );
-            fila.setAttribute("class","persona");
+            fila.setAttribute("ID","tema_"+ arrTemas[i].ID );
+            fila.setAttribute("class","tema");
             fila.setAttribute("onclick","prueba(this)");
 
+            var id = document.createElement("h2");
+            var texto = document.createTextNode(arrTemas[i].ID);
+            id.appendChild(texto);
+            id.setAttribute("ID","ID"+ arrTemas[i].ID );
+
             var nombre = document.createElement("h2");
-            var texto = document.createTextNode(arrJugadores[i].str_mname);
-            nombre.appendChild(texto);
-            nombre.setAttribute("id","nombrePersona_"+ arrJugadores[i].str_mid );
+            var textonum = document.createTextNode(arrTemas[i].Nombre);
+            nombre.appendChild(textonum);
+            nombre.setAttribute("Nombre","Nombre"+ arrTemas[i].ID );
 
-            var caracteristicaUno = document.createElement("h2");
-            var textonum = document.createTextNode(arrJugadores[i].str_mfirst_characteristic);
-            caracteristicaUno.appendChild(textonum);
-            caracteristicaUno.setAttribute("id","primeraCaracteristica_"+ arrJugadores[i].str_mid );
+            var instrumental = document.createElement("h2");
+            var textoequipo = document.createTextNode(arrTemas[i].Instrumental);
+            instrumental.appendChild(textoequipo);
+            instrumental.setAttribute("Instrumental","Instrumental"+ arrTemas[i].ID );
 
-            var caracteristicaDos = document.createElement("h2");
-            var textoequipo = document.createTextNode(arrJugadores[i].str_msecond_characteristic);
-            caracteristicaDos.appendChild(textoequipo);
-            caracteristicaDos.setAttribute("id","segundaCaracteristica__"+ arrJugadores[i].str_mid );
+            var instrumentalId = document.createElement("h2");
+            var textoequipo = document.createTextNode(arrTemas[i].ID_Instrumental);
+            instrumentalId.appendChild(textoequipo);
+            instrumentalId.setAttribute("ID_Instrumental","ID_Instrumental"+ arrTemas[i].ID_Instrumental);
 
-            var caracteristicaTres = document.createElement("h2");
-            var textoequipo = document.createTextNode(arrJugadores[i].str_mthird_characteristic);
-            caracteristicaTres.appendChild(textoequipo);
-            caracteristicaTres.setAttribute("id","terceraCaracteristica__"+ arrJugadores[i].str_mid );
-
+            fila.appendChild(id);
             fila.appendChild(nombre);
-            fila.appendChild(caracteristicaUno);
-            fila.appendChild(caracteristicaDos);
-            fila.appendChild(caracteristicaTres)
+            fila.appendChild(instrumental);
+            fila.appendChild(instrumentalId)
 
 
             capa.appendChild(fila);

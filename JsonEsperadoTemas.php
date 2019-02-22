@@ -12,7 +12,7 @@
     $arrTemaEsperado["ID_Instrumental"] = 0;
 
 
-    $arrEsperado["tema"] = $arrTemaEsperado;
+    $arrEsperado["temas"] = $arrTemaEsperado;
 
 
 
@@ -20,9 +20,9 @@
 
         $auxCorrecto = false;
 
-        if(isset($recibido["peticion"]) && $recibido["peticion"] ="add" && isset($recibido["tema"])){
+        if(isset($recibido["peticion"]) && $recibido["peticion"] ="add" && isset($recibido["temas"])){
 
-            $auxTema = $recibido["tema"];
+            $auxTema = $recibido["temas"];
             if(isset($auxTema["ID"]) && isset($auxTema["Nombre"]) && isset($auxTema["Instrumental"])&& isset($auxTema["ID_Instrumental"])){
                 $auxCorrecto = true;
             }

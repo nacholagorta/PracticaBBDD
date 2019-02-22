@@ -26,14 +26,14 @@ if(isset($parameters)){
 
 		$tema = $mensajeRecibido["tema"];
 
-		$id = $tema["ID"];
-        $name = $tema["Nombre"];
-		$instrumental = $tema["Instrumental"];
-        $InstrumentalID = $tema["InstrumentalID"];
+		$ID = $tema["ID"];
+        $Nombre = $tema["Nombre"];
+		$Instrumental = $tema["Instrumental"];
+        $InstrumentalID = $tema["ID_Instrumental"];
 
 
-		$query  = "INSERT INTO  temas (ID,Nombre,Instrumental, InstrumentalID) ";
-		$query .= "VALUES ('$id','$name','$instrumental','$InstrumentalID')";
+		$query  = "INSERT INTO  temas (ID,Nombre,Instrumental, ID_Instrumental) ";
+		$query .= "VALUES ('$Id','$Nombre','$Instrumental','$ID_Instrumental')";
 
 		$result = $conn->query ( $query );
 
