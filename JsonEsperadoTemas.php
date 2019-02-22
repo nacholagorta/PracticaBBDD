@@ -4,15 +4,15 @@
     $arrEsperado = array();
     $arrTemaEsperado = array();
 
-    $arrEsperado["peticion"] = "add";
+    $arrEsperado["peticion"]="add";
 
-    $arrTemaEsperado["ID"] = 0;
-    $arrTemaEsperado["Nombre"] = "PisoFranko (Un string)";
-    $arrTemaEsperado["Instrumental"] = "Chilling in the bathtub five feet apart becouse we are not GAY(Un string)";
-    $arrTemaEsperado["ID_Instrumental"] = 0;
+    $arrTemaEsperado["ID"]=0;
+    $arrTemaEsperado["Nombre"]="PisoFranko (Un string)";
+    $arrTemaEsperado["Instrumental"]="Chilling in the bathtub five feet apart becouse we are not GAY(Un string)";
+    $arrTemaEsperado["ID_Instrumental"]=0;
 
 
-    $arrEsperado["temas"] = $arrTemaEsperado;
+    $arrEsperado["tema"] = $arrTemaEsperado;
 
 
 
@@ -20,11 +20,12 @@
 
         $auxCorrecto = false;
 
-        if(isset($recibido["peticion"]) && $recibido["peticion"] ="add" && isset($recibido["temas"])){
+        if(isset($recibido["peticion"]) && $recibido["peticion"] ="add" && isset($recibido["tema"])){
 
-            $auxTema = $recibido["temas"];
+            $auxTema = $recibido["tema"];
             if(isset($auxTema["ID"]) && isset($auxTema["Nombre"]) && isset($auxTema["Instrumental"])&& isset($auxTema["ID_Instrumental"])){
                 $auxCorrecto = true;
+
             }
 
         }

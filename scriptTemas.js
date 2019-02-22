@@ -45,7 +45,7 @@ function cambiaDos(){
     };
 
     //xhttp.open("GET", "http://localhost/DavidAngulo/crudJson/readEntity.php", true);
-    xhttp.open("GET", "http://localhost/Nacho/PisoFranko/readTema.php", true);
+    xhttp.open("GET", "readTema.php", true);
     xhttp.send();
 
 
@@ -139,10 +139,10 @@ function limpia() {
 function insertarTema(){
     var tema = {};
 
-    tema.ID = document.getElementById("id").value;
-    tema.Nombre = document.getElementById("nombre").value;
-    tema.Instrumental = document.getElementById("instrumental").value;
-    tema.ID_Instrumental = document.getElementById("instrumentalId").value;
+    tema.ID = document.getElementById("ID").value;
+    tema.Nombre = document.getElementById("Nombre").value;
+    tema.Instrumental = document.getElementById("Instrumental").value;
+    tema.ID_Instrumental = document.getElementById("ID_Instrumental").value;
 
 
     console.log(tema);
@@ -160,9 +160,8 @@ function insertarTema(){
     console.log(peticionJSON);
 
     var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
-    //xmlhttp.open("POST", "http://localhost/davidangulo/crudJson/writeEntity.php");
 
-    xmlhttp.open("POST", "http://localhost/Nacho/PisoFranko/writeTema.php");
+    xmlhttp.open("POST", "writeTema.php");
     xmlhttp.setRequestHeader("Content-Type", "application/json");
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
