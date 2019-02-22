@@ -107,31 +107,6 @@ function pintaTabla(respuesta){
 
 }
 
-function prueba(elemento){
-
-    id = elemento.id;
-
-    pos = id.indexOf("_");
-
-    tam = id.length
-
-    idjugador = id.substring(pos+1,tam);
-
-    id = document.getElementById("id" + idjugador).innerHTML;
-    nombre = document.getElementById("nombre" + idjugador).innerHTML;
-    caracteristicaUno = document.getElementById("caracteristicaUno" + idjugador).innerHTML;
-    caracteristicaDos = document.getElementById("caracteristicaDos" + idjugador).innerHTML;
-    caracteristicaTres = document.getElementById("caracteristicaTres" + idjugador).innerHTML;
-
-
-    document.getElementById("id").value = id;
-    document.getElementById("nombre").value = nombre;
-    document.getElementById("caracteristicaUno").value = caracteristicaUno;
-    document.getElementById("caracteristicaDos").value = caracteristicaDos;
-    document.getElementById("caracteristicaTres").value = caracteristicaTres;
-
-
-}
 function limpia() {
     document.getElementById('principalTemas').innerHTML='';
 }
@@ -195,21 +170,21 @@ function insertarTema(){
 
 }
 
-function updateColega(){
-    var jugador = {};
+function updateTema(){
+    var tema = {};
 
-    jugador.int_id = document.getElementById("id").value;
-    jugador.str_mname = document.getElementById("nombre").value;
-    jugador.str_mfirst_characteristic = document.getElementById("caracteristicaUno").value;
-    jugador.str_msecond_characteristic = document.getElementById("caracteristicaDos").value;
-    jugador.str_mthird_characteristic = document.getElementById("caracteristicaTres").value;
+    tema.ID = document.getElementById("ID").value;
+    tema.Nombre = document.getElementById("Nombre").value;
+    tema.Instrumental = document.getElementById("Instrumental").value;
+    tema.ID_Instrumental = document.getElementById("ID_Instrumental").value;
 
-    console.log(jugador);
+
+    console.log(tema);
 
     var peticion = {};
 
     peticion.peticion = "add";
-    peticion.curse = jugador;
+    peticion.tema = tema;
 
     console.log("esta es la peticion")
     console.log(peticion);
@@ -221,7 +196,7 @@ function updateColega(){
     var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
     //xmlhttp.open("POST", "http://localhost/davidangulo/crudJson/writeEntity.php");
 
-    xmlhttp.open("POST", "http://localhost/Nacho/DataAccessJSON/UpdateCurse.php");
+    xmlhttp.open("POST", "updateTema.php");
     xmlhttp.setRequestHeader("Content-Type", "application/json");
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -258,8 +233,8 @@ function updateColega(){
 
 function deletecolega() {
     alert("has pulsado eliminar")
-    var jugador = {};
-    jugador.str_mid = document.getElementById("id_delete").value;
+    var tema = {};
+    tema.str_mid = document.getElementById("id_delete").value;
     var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
     //xmlhttp.open("POST", "http://localhost/davidangulo/crudJson/writeEntity.php");
 
