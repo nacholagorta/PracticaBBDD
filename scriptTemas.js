@@ -68,7 +68,7 @@ function pintaTabla(respuesta){
             var fila = document.createElement("div");
             fila.setAttribute("ID","tema_"+ arrTemas[i].ID );
             fila.setAttribute("class","tema");
-            fila.setAttribute("onclick","prueba(this)");
+          //  fila.setAttribute("onclick","prueba(this)");
 
             var id = document.createElement("h2");
             var texto = document.createTextNode(arrTemas[i].ID);
@@ -231,16 +231,17 @@ function updateTema(){
 }
 
 
-function deletecolega() {
+function deleteTema() {
     alert("has pulsado eliminar")
     var tema = {};
-    tema.str_mid = document.getElementById("id_delete").value;
+    tema.ID = document.getElementById("ID_Delete").value;
     var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
     //xmlhttp.open("POST", "http://localhost/davidangulo/crudJson/writeEntity.php");
 
-    xmlhttp.open("POST", "http://localhost/Nacho/DataAccessJSON/DeleteEntity.php");
+    xmlhttp.open("POST", "deleteTema.php");
+  //  alert("Putada premo")
     xmlhttp.setRequestHeader("Content-Type", "application/json");
-    xmlhttp.onreadystatechange = function () {
+    xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
 
 
